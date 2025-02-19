@@ -1,9 +1,9 @@
 :root {
     /* 主色 */
-    --b3-theme-primary: #e4e23a;
-    --b3-theme-primary-light: rgba(228, 226, 58, .72);
-    --b3-theme-primary-lighter: rgba(228, 226, 58, .48);
-    --b3-theme-primary-lightest: rgba(228, 226, 58, .24);
+    --b3-theme-primary: rgb(181,228,57);
+    --b3-theme-primary-light: rgba(181, 226, 58, .72);
+    --b3-theme-primary-lighter: rgba(181, 226, 58, .48);
+    --b3-theme-primary-lightest: rgba(181, 226, 58, .24);
     --b3-theme-secondary: #f3a92f;
     --b3-theme-background: #1e1e1e;
     --b3-theme-background-light: rgba(255, 255, 255, .075);
@@ -142,7 +142,7 @@
 
     /* 阴影 */
     --b3-point-shadow: inset 0 .5px .5px .5px rgba(255, 255, 255, .09), 0 3px 6px rgba(0, 0, 0, .04), 0 0 0 0 transparent;
-    --b3-dialog-shadow: 0 8px 24px #010409;
+    --b3-dialog-shadow:0px 8px  24px rgba(140,149,159,.2);
     --b3-button-shadow: 0 5px 5px -3px rgb(0 0 0 / .2), 0 8px 10px 1px rgb(0 0 0 / .14), 0 3px 14px 2px rgb(0 0 0 / .12);
 
     /* 图表颜色 */
@@ -544,3 +544,14 @@ span[data-type~=file-annotation-ref]::after{
 }
 .dock__item{box-shadow:unset;transition:var(--b3-transition);}
 .dock__item--active:hover, .toolbar__item--active:hover{background-color:var(--b3-theme-background-light)!important}
+
+.b3-typography u, .b3-typography span[data-type~=u], .protyle-wysiwyg u, .protyle-wysiwyg span[data-type~=u]{border-bottom:2px solid}
+
+/*分割线*/
+.protyle-wysiwyg [data-node-id].hr>div:after{height:2px; background-color:rgb(181 228 57 / 48%);}
+.protyle-wysiwyg [data-node-id].hr>div:before{height:2px; background-color:rgb(181 228 57 );position: absolute;
+    content: " ";
+height:8px;
+    width:8px;
+   right:1px;
+    top: -5px;}
