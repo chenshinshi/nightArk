@@ -253,8 +253,8 @@
 
 
 /*背景图片嵌入*/
-.status,.dock,.layout-tab-bar,.protyle-breadcrumb,.layout-tab-container,.protyle{background-color:transparent !important}
-
+.dock,.layout-tab-bar,.protyle-breadcrumb,.layout-tab-container,.protyle{background-color:transparent !important}
+.toolbar{background-color:#060606!important;border:none}
 body{
   background-image: url(素材/bg.jpg);
   background-position:center;
@@ -266,9 +266,11 @@ body{
 .b3-dialog__container{background-image:url(素材/notice.png);background-size:cover;border-radius:2rem;  background-repeat: no-repeat;
 background-color:transparent;}
 .search__list{background-color:transparent}
+
+.status{border:none;background-color:black;}
 /*样式*/
 :is(.b3-typography,.protyle-wysiwyg) :is(span[data-type~=mark],mark){    background: rgba(0, 0, 0, 0);
-background: linear-gradient(to bottom, transparent 30%, rgba(255, 208, 0, .2)50%, rgba(255, 208, 0, .4)) !important;
+background: linear-gradient(to bottom, transparent 50%, rgb(0 204 255 / 40%) 50%, rgb(0 204 255 / 40%)) !important;
     color: inherit;
 }
 *:not(.pdfViewer)::selection {
