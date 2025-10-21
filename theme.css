@@ -74,7 +74,20 @@
     --b3-card-info-background: #28405c;
     --b3-card-success-color: rgb(183, 223, 185);
     --b3-card-success-background: #425347;
+ --b3-card-error-color: #FF5572;
+    --b3-card-error-background: oklch(25% 0.12 15 / 0.9); /* 深邃的品红背景 */
 
+    /* Warning: 明亮的警告黄 */
+    --b3-card-warning-color: #FFD155;
+    --b3-card-warning-background: oklch(28% 0.1 85 / 0.9); /* 深琥珀色背景 */
+
+    /* Info: 清晰的数据蓝 */
+    --b3-card-info-color: #55C6FF;
+    --b3-card-info-background: oklch(30% 0.1 230 / 0.9); /* 深海蓝色背景 */
+
+    /* Success: 活力的荧光绿 */
+    --b3-card-success-color: var(--b3-theme-primary);
+    --b3-card-success-background: oklch(28% 0.1 160 / 0.9); /* 深翠绿色背景 */
     /* 自定义文字 */
 	---b3-font-color1: #FFF;
     ---b3-font-color2: #6f7477;
@@ -342,7 +355,7 @@ background: linear-gradient(to bottom, transparent 50%, rgb(0 204 255 / 40%) 50%
     position: absolute;
     bottom: 32px !important;
 }
-.dock#dockBottom .dock__item {position:absolute;z-index:100}
+.dock#dockBottom .dock__item {/*position:absolute;*/z-index:100}
 /*标题*/
 b3-typography h1, .b3-typography .h1, .protyle-wysiwyg h1, .protyle-wysiwyg .h1{padding-left:30px;font-size:1.4em}
 
