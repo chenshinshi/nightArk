@@ -228,6 +228,64 @@
     --b3-parent-background: var(--b3-theme-background);
 }
 
+/* --- 方案一：霓虹矩阵 --- */
+
+/* --- 基础色定义 (13色) --- */
+:root {
+    --base-color-1: #FFFFFF; /* 纯白 - 控制中心 */
+    --base-color-2: #8A9199; /* 冷灰 - 非激活文本 */
+    --base-color-3: #FF5572; /* 霓虹红 - 警报/错误 */
+    --base-color-4: #F2A900; /* 警告黄 - 注意/高亮 */
+    --base-color-5: #B3E33B; /* 荧光绿 - 成功/状态 */
+    --base-color-6: #00E3B3; /* 核心青 - 数据/链接 */
+    --base-color-7: #55AAFF; /* 数据蓝 - 信息/常规 */
+    --base-color-8: #B388FF; /* 电光紫 - 指令/特殊 */
+    --base-color-9: #F45EFF; /* 亮品红 - 用户/交互 */
+    --base-color-10: #FF8A00; /* 脉冲橙 - 能量/活动 */
+    --base-color-11: #00C4FF; /* 天空青 - 界面/UI */
+    --base-color-12: #2EFFB5; /* 薄荷绿 - 辅助/次要 */
+    --base-color-13: #FF66D4; /* 芭比粉 - 补充色 */
+}
+
+/* --- 派生字体颜色 (高亮、清晰) --- */
+:root {
+    --b3-font-color1: oklch(from var(--base-color-1) 98% c h);
+    --b3-font-color2: oklch(from var(--base-color-2) l c h);
+    --b3-font-color3: oklch(from var(--base-color-3) l c h);
+    --b3-font-color4: oklch(from var(--base-color-4) l c h);
+    --b3-font-color5: oklch(from var(--base-color-5) l c h);
+    --b3-font-color6: oklch(from var(--base-color-6) l c h);
+    --b3-font-color7: oklch(from var(--base-color-7) l c h);
+    --b3-font-color8: oklch(from var(--base-color-8) l c h);
+    --b3-font-color9: oklch(from var(--base-color-9) l c h);
+    --b3-font-color10: oklch(from var(--base-color-10) l c h);
+    --b3-font-color11: oklch(from var(--base-color-11) l c h);
+    --b3-font-color12: oklch(from var(--base-color-12) l c h);
+    --b3-font-color13: oklch(from var(--base-color-13) l c h);
+}
+
+/* --- 派生背景颜色 (低调、氛围感) --- */
+:root {
+    /* 核心：大幅降低亮度(l)，保留色度(c)和色相(h)，并设置低透明度 */
+    --b3-font-background1: oklch(from var(--base-color-1) 20% 0.02 h / 0.15);
+    --b3-font-background2: oklch(from var(--base-color-2) 20% c h / 0.15);
+    --b3-font-background3: oklch(from var(--base-color-3) 25% c h / 0.15);
+    --b3-font-background4: oklch(from var(--base-color-4) 25% c h / 0.15);
+    --b3-font-background5: oklch(from var(--base-color-5) 25% c h / 0.15);
+    --b3-font-background6: oklch(from var(--base-color-6) 25% c h / 0.15);
+    --b3-font-background7: oklch(from var(--base-color-7) 25% c h / 0.15);
+    --b3-font-background8: oklch(from var(--base-color-8) 25% c h / 0.15);
+    --b3-font-background9: oklch(from var(--base-color-9) 25% c h / 0.15);
+    --b3-font-background10: oklch(from var(--base-color-10) 25% c h / 0.15);
+    --b3-font-background11: oklch(from var(--base-color-11) 25% c h / 0.15);
+    --b3-font-background12: oklch(from var(--base-color-12) 25% c h / 0.15);
+    --b3-font-background13: oklch(from var(--base-color-13) 25% c h / 0.15);
+}
+
+
+
+
+
 /* 微软字体斜体会被相邻背景遮挡，将 arial 放置其前 https://github.com/siyuan-note/siyuan/issues/11841；"Segoe UI" 和 Noto-COLRv1-2.047 冲突，故移除。 */
 :root:lang(zh_CN) {
     --b3-font-family: "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "PingFang SC", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Source Han Sans SC", arial, "Microsoft Yahei", sans-serif, emojis;
@@ -404,7 +462,7 @@ body.body--win32 .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item
 
 
 /*数据库优化*/
-.custom-attr__avvalue .b3-chip[style*="color1)"],.av__cell .b3-chip[style*="color1)"],.av__panel .b3-chip[style*="color1)"],[data-name="av-col-option"] .color__square[style*="color1)"],.b3-menu__label .b3-chip[data-color="1"]{
+/*.custom-attr__avvalue .b3-chip[style*="color1)"],.av__cell .b3-chip[style*="color1)"],.av__panel .b3-chip[style*="color1)"],[data-name="av-col-option"] .color__square[style*="color1)"],.b3-menu__label .b3-chip[data-color="1"]{
 	background-color:var(--b3-font-background3)!important;
 	color:var(--Sv-font-color3)!important;
 }
@@ -455,7 +513,7 @@ body.body--win32 .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item
 .custom-attr__avvalue .b3-chip[style*="color13)"],.av__cell .b3-chip[style*="color13)"],.av__panel .b3-chip[style*="color13)"],[data-name="av-col-option"] .color__square[style*="color13)"],.b3-menu__label .b3-chip[data-color="13"]{
 	background-color:var(--b3-font-background1)!important;
 	color:var(--Sv-font-color1)!important;
-}
+}*/
 .av__row--header, .av__row--footer,.av__colsticky{background-color:transparent}
 
 /*toolbar*/
@@ -530,6 +588,7 @@ color:inherit;
         -1px -1px,  /* 网格竖线位置 */
         0 0,        /* 上下渐变位置 */
         0 0;        /* 纯色背景板位置 */
+	backdrop-filter: blur(3px); 
 }
 
 
@@ -633,7 +692,7 @@ span[data-type~=file-annotation-ref]::after{
   color: inherit;
   border-bottom: thin solid var(--b3-theme-primary);
 }
-.protyle-wysiwyg [data-node-id] span[data-type="a"]:not(:empty):not([data-href*="siyuan://"]):not([data-href*="assets/"]),.protyle-wysiwyg [data-node-id] span[data-type~=a]{background-color:rgba(240, 246, 252, 0.15);border-radius:100px;padding:4px 10px 3px 10px;font-size:90%;border-bottom:none}
+.protyle-wysiwyg [data-node-id] span[data-type="a"]:not(:empty):not([data-href*="siyuan://"]):not([data-href*="assets/"]),.protyle-wysiwyg [data-node-id] span[data-type~=a]{background-color:rgba(240, 246, 252, 0.15);border-radius:100px;padding:4px 10px 3px 10px;font-size:90%;border-bottom:none;}
 
 .protyle-wysiwyg [data-node-id] span[data-type="a"]:not(:empty):not([data-href*="siyuan://"]):not([data-href*="assets/"]):hover,.protyle-wysiwyg [data-node-id] span[data-type~=a]:hover{/*background-color:#535353;*/box-shadow:0px 0px 6px var(--b3-theme-primary),0px 0px 3px #222222;background-color:rgba(240, 246, 252, 0.15)}
 
@@ -663,9 +722,16 @@ height:8px;
 .b3-card{box-shadow:unset}
 
 .item--full.item--focus:hover .item__text{color:var(--b3-theme-on-background)}
-.protyle-wysiwyg [data-node-id].table table{background-color:rgba(0,0,0,.5);border-radius:5px;}
+.protyle-wysiwyg [data-node-id].table table{background-color:rgba(0,0,0,.5);backdrop-filter: blur(3px);border-radius:5px;}
 
 .b3-list--background.hint--menu .b3-list-item--focus{    background-color: var(--b3-theme-primary-lightest)!important;
     border-left:2px solid var(--b3-theme-primary)!important;}
 .b3-list--background.hint--menu .b3-list-item{margin-inline:0px;border-radius:0px;width:100%!important;border-left:2px solid rgba(0,0,0,0)}
 .b3-list--background.hint--menu ::-webkit-scrollbar{width:0px!important}
+
+
+.protyle-attr--refcount{background-color:transparent;background-image: radial-gradient(rgba(179, 227, 59, 0.4) 20%, transparent 80%);transition:var(--b3-transition);color:rgba(0,0,0,.4);font-weight:600;}
+.layout__empty{background-color:transparent}
+.b3-typography img, .protyle-wysiwyg img,.pdf__outer:not(.pdf__outer--dark) .pdfViewer{
+    filter: brightness(0.8) contrast(0.9) saturate(0.9);
+}
