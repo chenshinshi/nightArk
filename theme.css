@@ -364,10 +364,18 @@ background-color:transparent;}
 }
 .dock#dockBottom .dock__item {/*position:absolute;*/z-index:100}
 /*标题*/
-b3-typography h1, .b3-typography .h1, .protyle-wysiwyg h1, .protyle-wysiwyg .h1{padding-left:35px;}
-
-b3-typography h1:before, .b3-typography .h1:before, .protyle-wysiwyg h1:before, .protyle-wysiwyg .h1:before
-{content:"";position:absolute;display:block;width:100%;height:200px;z-index:-1;top:-55px;margin-left:-80px;background-image:url(素材/h2.png);background-size:contain;background-repeat:no-repeat;}
+b3-typography h1, .b3-typography .h1, .protyle-wysiwyg h1, .protyle-wysiwyg .h1{
+	padding-left:55px;
+	margin-left:-55px;
+    background-image: url(素材/h2.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100%;height:150px;
+	align-items: center;
+    display: flex;}
+b3-typography h1 div, .b3-typography .h1 div, .protyle-wysiwyg h1 div, .protyle-wysiwyg .h1 div{position:relative}
+/*b3-typography h1:before, .b3-typography .h1:before, .protyle-wysiwyg h1:before, .protyle-wysiwyg .h1:before
+{content:"";position:absolute;display:block;width:100%;height:200px;z-index:-1;top:-55px;margin-left:-80px;background-image:url(素材/h2.png);background-size:contain;background-repeat:no-repeat;}*/
 
 b3-typography h2, .b3-typography .h2, .protyle-wysiwyg h2, .protyle-wysiwyg .h2{      background: linear-gradient(to right, var(--b3-theme-primary), #e0e0e0);
     -webkit-background-clip: text;
@@ -909,4 +917,169 @@ height:8px;
     background-color: rgb(from var(--b3-theme-primary) r g b / 15%);
     border-color: rgb(from var(--b3-theme-primary) r g b / 50%);
     box-shadow: 0 0 16px rgb(from var(--b3-theme-primary) r g b / 30%);
+}
+.layout__dockl, .layout__dockr, .layout__dockb{background-color:transparent}
+
+.b3-typography .callout::before, .protyle-wysiwyg .callout::before{display:none}
+
+/* ============================
+   暗色背景 · 荧光玻璃 callout
+   页面背景建议: #1a1a1a ~ #1e1e1e
+   ============================ */
+
+/* ── TIP · 荧光绿 ── */
+.callout[data-subtype="TIP"] {
+  background-color: rgba(76, 174, 127, 0.08);
+  border: 1px solid rgba(76, 174, 127, 0.25);
+  box-shadow: 0 0 16px rgba(76, 174, 127, 0.12);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── NOTE · 荧光蓝 ── */
+.callout[data-subtype="NOTE"] {
+  background-color: rgba(90, 144, 217, 0.08);
+  border: 1px solid rgba(90, 144, 217, 0.25);
+  box-shadow: 0 0 16px rgba(90, 144, 217, 0.12);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── IMPORTANT · 荧光紫 ── */
+.callout[data-subtype="IMPORTANT"] {
+  background-color: rgba(139, 106, 184, 0.08);
+  border: 1px solid rgba(139, 106, 184, 0.25);
+  box-shadow: 0 0 16px rgba(139, 106, 184, 0.12);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── WARNING · 荧光橙 ── */
+.callout[data-subtype="WARNING"] {
+  background-color: rgba(230, 126, 34, 0.08);
+  border: 1px solid rgba(230, 126, 34, 0.25);
+  box-shadow: 0 0 16px rgba(230, 126, 34, 0.12);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── CAUTION · 荧光红 ── */
+.callout[data-subtype="CAUTION"] {
+  background-color: rgba(217, 83, 79, 0.08);
+  border: 1px solid rgba(217, 83, 79, 0.25);
+  box-shadow: 0 0 16px rgba(217, 83, 79, 0.12);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+/* ── TIP：荧光绿标题 ── */
+.b3-typography .callout[data-subtype="TIP"] .callout-info,
+.protyle-wysiwyg .callout[data-subtype="TIP"] .callout-info {
+  color: #5fdba0; /* 比主色 #4cae7f 更亮，在暗底上清晰 */
+}
+
+/* ── NOTE：荧光蓝标题 ── */
+.b3-typography .callout[data-subtype="NOTE"] .callout-info,
+.protyle-wysiwyg .callout[data-subtype="NOTE"] .callout-info {
+  color: #7ab8f5; /* 对应荧光蓝 */
+}
+
+/* ── IMPORTANT：荧光紫标题 ── */
+.b3-typography .callout[data-subtype="IMPORTANT"] .callout-info,
+.protyle-wysiwyg .callout[data-subtype="IMPORTANT"] .callout-info {
+  color: #b392f0; /* 柔光紫，呼应辉光 */
+}
+
+/* ── WARNING：荧光橙标题 ── */
+.b3-typography .callout[data-subtype="WARNING"] .callout-info,
+.protyle-wysiwyg .callout[data-subtype="WARNING"] .callout-info {
+  color: #f5a35c; /* 温暖亮橙 */
+}
+
+/* ── CAUTION：荧光红标题 ── */
+.b3-typography .callout[data-subtype="CAUTION"] .callout-info,
+.protyle-wysiwyg .callout[data-subtype="CAUTION"] .callout-info {
+  color: #f0716b; /* 柔和亮红，避免刺眼 */
+}
+
+.callout[data-subtype="TIP"] {
+  background-image:
+    /* 网格横线 */
+    linear-gradient(rgba(76, 174, 127, 0.12) 1px, transparent 1px),
+    /* 网格竖线 */
+    linear-gradient(to right, rgba(76, 174, 127, 0.12) 1px, transparent 1px);
+  background-size:
+    20px 20px,
+    20px 20px;
+  background-position:
+    -1px -1px,
+    -1px -1px;
+}
+
+/* ── NOTE · 蓝色系 ── */
+.callout[data-subtype="NOTE"] {
+  background-image:
+    linear-gradient(rgba(90, 144, 217, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(90, 144, 217, 0.12) 1px, transparent 1px);
+
+  background-size:
+    20px 20px,
+    20px 20px;
+  background-position:
+    -1px -1px,
+    -1px -1px;
+}
+
+/* ── IMPORTANT · 紫色系 ── */
+.callout[data-subtype="IMPORTANT"] {
+  background-image:
+    linear-gradient(rgba(139, 106, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(139, 106, 184, 0.12) 1px, transparent 1px);
+
+  background-size:
+    20px 20px,
+    20px 20px;
+  background-position:
+    -1px -1px,
+    -1px -1px;
+}
+
+/* ── WARNING · 橙色系 ── */
+.callout[data-subtype="WARNING"] {
+  background-image:
+    linear-gradient(rgba(230, 126, 34, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(230, 126, 34, 0.12) 1px, transparent 1px);
+
+  background-size:
+    20px 20px,
+    20px 20px;
+  background-position:
+    -1px -1px,
+-1px -1px;}
+
+/* ── CAUTION · 红色系 ── */
+.callout[data-subtype="CAUTION"] {
+  background-image:
+    linear-gradient(rgba(217, 83, 79, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(217, 83, 79, 0.12) 1px, transparent 1px);
+  background-size:
+    20px 20px,
+    20px 20px;
+  background-position:
+    -1px -1px,
+    -1px -1px;
 }
