@@ -431,7 +431,9 @@ b3-typography h4, .b3-typography .h4, .protyle-wysiwyg h4, .protyle-wysiwyg .h4{
 
 
 /*大纲*/
-body.body--win32 .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item__text::before, body.body-asri--linux .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item__text::before {
+body.body--win32 .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item__text::before, body.body-asri--linux .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item__text::before,
+body.body--win32 .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item__number::before,
+body.body-asri--linux .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item__number::before {
     font-family: "Segoe UI";
     font-size: .75em;
     color:rgba(255,255,255,.4);
@@ -440,6 +442,11 @@ body.body--win32 .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item
    margin-left:-20px;
    transition:color 0.3s ease-in-out;
 }
+body.body--win32 .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item__number + .b3-list-item__text::before,
+body.body-asri--linux .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item__number + .b3-list-item__text::before {
+    display:none;
+}
+
 :root {
     /* 默认的低调白色，作为参考 */
     --h-marker-default: rgba(255, 255, 255, 0.4);
@@ -492,7 +499,55 @@ body.body--win32 .sy__outline .b3-list-item[data-type=NodeHeading] .b3-list-item
 .sy__outline:hover .b3-list-item[data-type=NodeHeading][data-subtype=h6] .b3-list-item__text::before,.layout--float .sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h6] .b3-list-item__text::before  {
 		color:var(--h6-marker-color);
 }
+.sy__outline .b3-list-item[data-type=NodeHeading]>svg {
+    color: rgba(0, 0, 0, 0) !important;
+    z-index: 1;
+}
 
+.sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h5] .b3-list-item__number::before {
+    content: "❺";
+}
+.sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h1] .b3-list-item__number::before {
+    content: "❶";
+}
+.sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h2] .b3-list-item__number::before {
+    content: "❷";
+}
+.sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h3] .b3-list-item__number::before {
+    content: "❸";
+}
+.sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h4] .b3-list-item__number::before {
+    content: "❹";
+}
+.sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h6] .b3-list-item__number::before {
+    content: "❻";
+}
+
+/* hover 与浮动布局颜色 */
+.sy__outline:hover .b3-list-item[data-type=NodeHeading][data-subtype=h5] .b3-list-item__number::before,
+.layout--float .sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h5] .b3-list-item__number::before {
+    color: var(--h5-marker-color);
+}
+.sy__outline:hover .b3-list-item[data-type=NodeHeading][data-subtype=h1] .b3-list-item__number::before,
+.layout--float .sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h1] .b3-list-item__number::before {
+    color: var(--h1-marker-color);
+}
+.sy__outline:hover .b3-list-item[data-type=NodeHeading][data-subtype=h2] .b3-list-item__number::before,
+.layout--float .sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h2] .b3-list-item__number::before {
+    color: var(--h2-marker-color);
+}
+.sy__outline:hover .b3-list-item[data-type=NodeHeading][data-subtype=h3] .b3-list-item__number::before,
+.layout--float .sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h3] .b3-list-item__number::before {
+    color: var(--h3-marker-color);
+}
+.sy__outline:hover .b3-list-item[data-type=NodeHeading][data-subtype=h4] .b3-list-item__number::before,
+.layout--float .sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h4] .b3-list-item__number::before {
+    color: var(--h4-marker-color);
+}
+.sy__outline:hover .b3-list-item[data-type=NodeHeading][data-subtype=h6] .b3-list-item__number::before,
+.layout--float .sy__outline .b3-list-item[data-type=NodeHeading][data-subtype=h6] .b3-list-item__number::before {
+    color: var(--h6-marker-color);
+}
 .protyle-title__input::after{content:"";display:block;border-bottom:3px solid gray;width:80%;margin-top:5px}
 
 
